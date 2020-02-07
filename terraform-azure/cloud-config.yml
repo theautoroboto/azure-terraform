@@ -1,0 +1,468 @@
+azs:
+- cloud_properties: {}
+  cpi: 7687e3f00e016910b54c
+  name: Availability Sets
+compilation:
+  az: Availability Sets
+  env:
+    bosh:
+      password: REPLACE_ME
+  network: infra
+  reuse_compilation_vms: true
+  vm_extensions:
+  - vm-extension-compilation-13b5758e04a0c75dda43
+  vm_type: Standard_F4s
+  workers: 4
+disk_types:
+- cloud_properties: {}
+  disk_size: 1024
+  name: "1024"
+- cloud_properties: {}
+  disk_size: 2048
+  name: "2048"
+- cloud_properties: {}
+  disk_size: 5120
+  name: "5120"
+- cloud_properties: {}
+  disk_size: 10240
+  name: "10240"
+- cloud_properties: {}
+  disk_size: 20480
+  name: "20480"
+- cloud_properties: {}
+  disk_size: 30720
+  name: "30720"
+- cloud_properties: {}
+  disk_size: 51200
+  name: "51200"
+- cloud_properties: {}
+  disk_size: 76800
+  name: "76800"
+- cloud_properties: {}
+  disk_size: 102400
+  name: "102400"
+- cloud_properties: {}
+  disk_size: 153600
+  name: "153600"
+- cloud_properties: {}
+  disk_size: 204800
+  name: "204800"
+- cloud_properties: {}
+  disk_size: 307200
+  name: "307200"
+- cloud_properties: {}
+  disk_size: 512000
+  name: "512000"
+- cloud_properties: {}
+  disk_size: 768000
+  name: "768000"
+- cloud_properties: {}
+  disk_size: 1048576
+  name: "1048576"
+- cloud_properties: {}
+  disk_size: 2097152
+  name: "2097152"
+- cloud_properties: {}
+  disk_size: 3145728
+  name: "3145728"
+- cloud_properties: {}
+  disk_size: 4194304
+  name: "4194304"
+- cloud_properties: {}
+  disk_size: 6291456
+  name: "6291456"
+- cloud_properties: {}
+  disk_size: 8388608
+  name: "8388608"
+- cloud_properties: {}
+  disk_size: 10485760
+  name: "10485760"
+- cloud_properties: {}
+  disk_size: 12582912
+  name: "12582912"
+- cloud_properties: {}
+  disk_size: 14680064
+  name: "14680064"
+- cloud_properties: {}
+  disk_size: 16777216
+  name: "16777216"
+- cloud_properties: {}
+  disk_size: 20971520
+  name: "20971520"
+- cloud_properties: {}
+  disk_size: 25165824
+  name: "25165824"
+- cloud_properties: {}
+  disk_size: 29360128
+  name: "29360128"
+- cloud_properties: {}
+  disk_size: 33554432
+  name: "33554432"
+networks:
+- name: infra
+  subnets:
+  - azs:
+    - Availability Sets
+    cloud_properties:
+      resource_group_name: REPLACE_ME-spoke-rg1
+      subnet_name: infra
+      virtual_network_name: REPLACE_ME-spoke-vnet1
+    dns:
+    - REPLACE_ME
+    gateway: x.x.32.33
+    range: x.x.32.32/27
+    reserved:
+    - x.x.32.32-x.x.32.37
+    - x.x.32.39-x.x.32.44
+    static: []
+  type: manual
+- name: deploy
+  subnets:
+  - azs:
+    - Availability Sets
+    cloud_properties:
+      resource_group_name: REPLACE_ME-spoke-rg1
+      subnet_name: deploy
+      virtual_network_name: REPLACE_ME-spoke-vnet1
+    dns:
+    - REPLACE_ME
+    gateway: x.x.34.1
+    range: x.x.34.0/23
+    reserved:
+    - x.x.34.0-x.x.34.10
+    static: []
+  type: manual
+- name: pks-services
+  subnets:
+  - azs:
+    - Availability Sets
+    cloud_properties:
+      resource_group_name: REPLACE_ME-spoke-rg1
+      subnet_name: pks-services
+      virtual_network_name: REPLACE_ME-spoke-vnet1
+    dns:
+    - REPLACE_ME
+    gateway: x.x.36.1
+    range: x.x.36.0/23
+    reserved:
+    - x.x.36.0-x.x.36.5
+    static: []
+  type: manual
+- name: services
+  subnets:
+  - azs:
+    - Availability Sets
+    cloud_properties:
+      resource_group_name: REPLACE_ME-spoke-rg1
+      subnet_name: services
+      virtual_network_name: REPLACE_ME-spoke-vnet1
+    dns:
+    - REPLACE_ME
+    gateway: x.x.38.1
+    range: x.x.38.0/23
+    reserved:
+    - x.x.38.0-x.x.38.5
+    static: []
+  type: manual
+- name: bosh-deploy
+  subnets:
+  - azs:
+    - Availability Sets
+    cloud_properties:
+      resource_group_name: REPLACE_ME-spoke-rg1
+      subnet_name: bosh-deploy
+      virtual_network_name: REPLACE_ME-spoke-vnet1
+    dns:
+    - REPLACE_ME
+    gateway: x.x.33.1
+    range: x.x.33.0/26
+    reserved:
+    - x.x.33.0-x.x.33.4
+    static:
+    - x.x.33.10
+    - x.x.33.11
+    - x.x.33.12
+  type: manual
+vm_extensions:
+- cloud_properties:
+    assign_dynamic_public_ip: true
+  name: public_ip
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-compilation-13b5758e04a0c75dda43
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-windows_diego_cell-a2998c283e82119971af
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-database-d620cbd1a8e03fdb7737
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-blobstore-cfff27eed64fa8c82e55
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-control-b0b6b97dab777fec346f
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-compute-cf8f33ccd25483b6bab2
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-consul_server-70a16f82e72d4c657d62
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-nats-d90f0306cb5a0a6c7c95
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-nfs_server-2802d1a60e2b0b795273
+- cloud_properties:
+    assign_dynamic_public_ip: false
+    load_balancer: REPLACE_MEmysql-ilb
+  name: vm-extension-mysql_proxy-421cd8e2e2565557e242
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-mysql-493e17b61bf12c90b255
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-backup_restore-efe8814236aeefe8d6d3
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-diego_database-102ea9c4fe7f7de5d0f3
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-uaa-81d4b10654b00352937f
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-cloud_controller-77100b0a7459803dfec3
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-ha_proxy-9a953142c1f8f82acd7c
+- cloud_properties:
+    assign_dynamic_public_ip: false
+    load_balancer: REPLACE_MEdiegossh-ilb
+  name: vm-extension-diego_brain-5d64a037f4c48f488fca
+- cloud_properties:
+    assign_dynamic_public_ip: false
+    load_balancer: REPLACE_MEweb-ilb
+  name: vm-extension-router-5de9d116580e06460272
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-mysql_monitor-d200018dcf9db1b532d7
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-clock_global-7a7d60e870babe842ef5
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-cloud_controller_worker-3153ddf69a55b090d2ce
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-diego_cell-f3934aec136c485ef758
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-loggregator_trafficcontroller-af77ae453c611c420cc2
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-syslog_adapter-3eca50602e011f0da850
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-syslog_scheduler-9d1589bf24e048f8fd53
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-doppler-71e09667cd44b671d032
+- cloud_properties:
+    assign_dynamic_public_ip: false
+    load_balancer: REPLACE_MEtcp-ilb
+  name: vm-extension-tcp_router-138dbb8a93e0b4905314
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-credhub-4f8b3cf60ec76d75a7c2
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-istio_control-0261f9ef805790df7c8c
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-istio_router-a9604b182c0264769721
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-route_syncer-de62ab6d44191616ad27
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-mysql-9cf4d0375b1ebece8546
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-redis-c56e592d6f3f92e1e5cf
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-healthwatch-forwarder-b17281c601af4cc3b597
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-rabbitmq-broker-fb5fec7d04060d331aac
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-rabbitmq-haproxy-9f028824728f067c2e5f
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-rabbitmq-server-222c4940b3c75958bdf3
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-on-demand-broker-0428a6f877eef8040416
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-deploy-service-broker-b99dba247e062f3671e7
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-destroy-broker-94b2b398469284e7de80
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-redis-on-demand-broker-de048eed0961ef782683
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-cf-redis-broker-476d30bdbbe0d8f1334e
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-cloudcache-broker-a34a462f73bebdaa0a06
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-redis-fe2e3c4345dc5332be91
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-mysql-573ed40e7b8d56761120
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-postgres-f9d8f19d744a4d7bd0d2
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-errand-runner-6f95e0880763e9da2206
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-deploy-all-07d4cd96917b8404324d
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-delete-all-50a80a3f9f807193c04d
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-spring-cloud-services-99ed3c2078e679423ddd
+- cloud_properties:
+    assign_dynamic_public_ip: false
+    load_balancer: REPLACE_MEharbor-ilb
+  name: vm-extension-harbor-app-f804a53d22ddb0bbdc96
+- cloud_properties:
+    assign_dynamic_public_ip: false
+  name: vm-extension-smoke-testing-6bd05625e39c416f8ef1
+vm_types:
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS1_v2
+    root_disk:
+      size: 54272
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS1_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS2_v2
+    root_disk:
+      size: 105472
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS2_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS3_v2
+    root_disk:
+      size: 207872
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS3_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS4_v2
+    root_disk:
+      size: 412672
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS4_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS5_v2
+    root_disk:
+      size: 822272
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS5_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS11_v2
+    root_disk:
+      size: 105472
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS11_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS12_v2
+    root_disk:
+      size: 207872
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS12_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS13_v2
+    root_disk:
+      size: 412672
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS13_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_DS14_v2
+    root_disk:
+      size: 822272
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_DS14_v2
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_F1s
+    root_disk:
+      size: 19456
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_F1s
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_F2s
+    root_disk:
+      size: 35840
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_F2s
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_F4s
+    root_disk:
+      size: 68608
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_F4s
+- cloud_properties:
+    ephemeral_disk:
+      use_root_disk: true
+    instance_type: Standard_F8s
+    root_disk:
+      size: 134144
+    storage_account_max_disk_number: 150
+    storage_account_name: '*seast2dep*'
+  name: Standard_F8s

@@ -1,0 +1,38 @@
+instance_groups:
+- azs:
+  - Availability Sets
+  instances: 1
+  jobs:
+  - name: credhub-webui
+    properties:
+      client_id: credhub_webui
+      client_secret: LPjdnq9ZR46BNkCP
+      credhub_server: https://credhub.domain.com:8844
+      ssl:
+        certificate: ((/certs/wildcard.certificate))
+        key: ((/certs/wildcard.private_key))
+      ui_url: https://credhubui.sys.domain.com:8443
+    release: credhub-webui
+  name: web
+  networks:
+  - name: services
+    static_ips:
+    - x.x.33.12
+  persistent_disk: 5120
+  stemcell: default
+  vm_type: Standard_F1s
+name: credhub-webui
+releases:
+- name: credhub-webui
+  sha1: 0e05c6c7bd0d50bfa214142b16f3c8e333ec68e2
+  url: https://github.com/shreddedbacon/credhub-webui-boshrelease/releases/download/v0.0.5/credhub-webui-boshrelease-0.0.5.tgz
+  version: 0.0.5
+stemcells:
+- alias: default
+  os: ubuntu-xenial
+  version: latest
+update:
+  canaries: 1
+  canary_watch_time: 30000-600000
+  max_in_flight: 3
+  update_watch_time: 5000-600000
