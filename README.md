@@ -17,7 +17,7 @@ I am also in the process of transforming from terraform v0.11 to terraform v0.12
 - terraform
 - whiptail
 ### Environment Variables
-- ARM_ACCESS_KEY  -- 
+- ARM_ACCESS_KEY
 - ARM_CLIENT_ID
 - ARM_CLIENT_SECRET
 - TF_VAR_client_id
@@ -36,5 +36,6 @@ This script is designed to provide a menu to perform the various actions to prov
 ![](images/whiptail-terraform.jpg)
 ![](images/whiptail-download.jpg)
 ![](images/whiptail-config.jpg)
+
 #### Foundation to be produced
 ![](images/Foundation_Diagram.jpg)
