@@ -27,7 +27,7 @@ I am also in the process of transforming from terraform v0.11 to terraform v0.12
 - TF_VAR_subscription_id
 - TF_VAR_tenant_id
 - pivnet_token
-- 
+
 This script is designed to provide a menu to perform the various actions to provide a fully terraformed and configured Pivtoal Cloud Foundation.
 
 ### Menu
