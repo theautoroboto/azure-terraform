@@ -7,7 +7,7 @@ instance_groups:
     release: bpm
   - consumes:
       nats:
-        deployment: ((cf.))
+        deployment: ((cf.deploymentname))
         from: nats
     name: route_registrar
     properties:
@@ -22,7 +22,7 @@ instance_groups:
   - name: web
     properties:
       add_local_users:
-      - concourse:c4c0423e2986c15696d4b3d8e582a8f3
+      - concourse:PASSWORD
       auth_duration: 24h
       bind_port: 8080
       build_log_retention:
